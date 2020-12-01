@@ -5,10 +5,11 @@ const strikeThroughFirstLi = () => {
 
 strikeThroughFirstLi();
 
-
 const setImageSrc = function(id, url) {
     const newImage = document.querySelector(id)
     newImage.src = url
+    // or fancy way
+    // document.querySelector(id).src = url
 } 
 
 setImageSrc("#image-1",  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.y-AnXfIiMq8bUMeyy06IagHaNK%26pid%3DApi&f=1")
@@ -58,23 +59,30 @@ const changeFont = function(size, id) {
 changeFont('7em', '#lorem')
 
 const newLi = function(list) {
-    const nLi = document.createElement('li' + nLi) 
+    const nLi = document.createElement('li') 
     nLi.innerText = list
 
     return nLi
 }
-newLi('Halo')
+const nLi = newLi('This is the new text')
+newArg(nLi)
 
 const newText = function(text) {
     const newText = document.createElement('h' + text);
     newText.innerText = text
 
-    return newArg
+    return newText
 }
 
 newText("#arguments", 'This is the added text')
 
+const newHeader = function(size, text) {
+    const header = document.createElement(size, 'h1')
+    header.innerText = text
 
-// 2. Test it by calling it with some text, placing the return value in a variable, and passing it to your append function from Step 1 of Part 2.
-// 3. Write a function that takes in two strings, one representing a header size and one some text, and returns a new header of that size (e.g., a '3' for the first parameter should result in an `<h3>`) with that text in it.
-// 4. Test it by calling it with a header size and some text, placing the return value in a variable, and passing it to your append function from Step 1 of Part 2.
+    return header
+}
+
+const header = newHeader('This is the new header')
+newArg(header);
+
